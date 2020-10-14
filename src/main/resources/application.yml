@@ -1,0 +1,66 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+#    url: jdbc:mysql://192.168.0.106:3306/springjdbc
+#    url: jdbc:mysql://192.168.0.106:3306/mybatis
+    url: jdbc:mysql://192.168.0.106:3306/jpa
+    #老版本  com.mysql.jdbc.Driver
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+
+    initialization-mode: never  #默认EMBEDDED always只执行一次，之后改成never
+    # 默认执行schema.sql执行建表脚本  注意classpath前面有空格
+    schema:
+      - classpath:department.sql
+      - classpath:employee.sql
+#    data: classpath:data.sql
+
+      # spring.datasource.type 自定义配置数据源
+      # Spring Boot 2.0.4 默认com.zaxxer.hikari.HikariDataSource 数据源
+      # Spring Boot 1.5   默认org.apache.tomcat.jdbc.pool.DataSource数据源；
+
+      # 指定tomcat jdbc池  https://segmentfault.com/a/1190000002504983
+#    type: org.apache.tomcat.jdbc.pool.DataSource
+
+    #以下是切换自定义数据源druid
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    initialSize: 5
+#    minIdle: 5
+#    maxActive: 20
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 1 FROM DUAL
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+#    #   测试时报错：https://blog.csdn.net/qq_35170213/article/details/85779498
+#    #   https://blog.csdn.net/ikownyou/article/details/90445235
+#    filters: stat,wall,log4j
+#    maxPoolPreparedStatementPerConnectionSize: 20
+#    useGlobalDataSourceStat: true
+#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+#    #https://www.coder.work/article/56327
+#  main:
+#    allow-bean-definition-overriding: true
+
+  #配置jpa的hibernate时，druid不需要使用
+  jpa:
+    hibernate:
+      #使用hibernate 当表无或者更新时自动生成实体类User中name属性tb_user
+      # 启动程序会自动Hibernate: create table tb_user (id integer not null auto_increment, email varchar(255), last_name varchar(50), primary key (id)) engine=InnoDB
+      ddl-auto: update
+    show-sql: true
+
+
+
+# 让mybatis知道配置文件位置（全局配置文件、sql映射mapper文件）
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+#  mapper-locations: classpath:mybatis/mapper/EmployeeMapper.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+
+

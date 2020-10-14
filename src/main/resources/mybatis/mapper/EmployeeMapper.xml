@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace和接口绑定-->
+<mapper namespace="com.hlj.jixi.mapper.EmployeeMapper">
+
+    <!--之前报错：Result Maps collection does not contain value for com.hlj.jixi.bean.Employee-->
+    <!--resultType和resultMap问题-->
+    <select id="getEmpById" resultType="com.hlj.jixi.bean.Employee">
+        select * from employee where id=#{id}
+    </select>
+
+    <insert id="insertEmp">
+        insert into employee(lastName,email,gender,d_id) values (#{lastName},#{email},#{gender},#{dId})
+    </insert>
+
+    <!--没有验证语句-->
+    <update id="updateEmp" parameterType="com.hlj.jixi.bean.Employee">
+        update employee set lastName =#{lastName} where id=#{id}
+    </update>
+
+    <delete id="deleteEmp">
+        delete from employee where id=#{id}
+    </delete>
+
+</mapper>

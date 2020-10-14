@@ -1,0 +1,20 @@
+打印输出内容
+SpringApplicationRunListener  starting---------------
+SpringApplicationRunListener environmentMac OS X
+SpringApplicationRunListener environmentPrepared---------------
+
+---------------ApplicationContextInitializer-------------Initializer
+ConfigurableApplicationContext ioc容器---------------org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@347249be, started on Thu Jan 01 08:00:00 CST 1970
+SpringApplicationRunListener contextPrepared---------------
+
+
+SpringApplicationRunListener contextLoaded---------------
+servlet contextInitialized..... web应用启动
+
+SpringApplicationRunListener  started---------------
+ApplicationRunner------------[org.springframework.boot.DefaultApplicationArguments@778dfe35]
+CommandLineRunner-------[]
+SpringApplicationRunListener running---------------
+
+servlet contextDestroyed..... web项目销毁
+

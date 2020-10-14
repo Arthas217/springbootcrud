@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>成功!</title>
+</head>
+<body>
+    <h1>success!!!</h1>
+    <hr>
+    <div th:id="zlk" th:class="zzz" th:text="${hi}"></div>
+    <hr>
+    <div>我的祖国</div>
+    <hr>
+    <div th:utext="${hi}"></div>
+    <hr>
+    <h4 th:text="${num}" th:each="num:${arr}"></h4>
+    <hr>
+    <h3>
+        <span th:each="num:${arr}">[[${num}]]</span>
+    </h3>
+</body>
+</html>
