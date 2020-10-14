@@ -2,6 +2,7 @@ package com.hlj.jixi.bean;
 
 /**
  * DB对应的实体表
+ *
  * @Date 2020/10/14
  */
 public class Employee {

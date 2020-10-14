@@ -24,7 +24,7 @@ public class UserControl {
     public User getUser(@PathVariable("id") Integer id) {
         Optional<User> optionalUser = userRepository.findById(id);
         if (!optionalUser.isPresent()) {
-           return new User();
+            return new User();
         }
         return optionalUser.get();
     }

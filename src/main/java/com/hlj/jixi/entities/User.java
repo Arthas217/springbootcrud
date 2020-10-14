@@ -18,9 +18,9 @@ import javax.persistence.*;
 public class User {
     @Id //主键
     @GeneratedValue(strategy = GenerationType.IDENTITY) //自增
-    @NotFound(action= NotFoundAction.IGNORE)
+    @NotFound(action = NotFoundAction.IGNORE)
     private Integer id;
-    @Column(name = "last_name",length = 50) //对应数据表一个列
+    @Column(name = "last_name", length = 50) //对应数据表一个列
     private String lastName;
     @Column
     private String email;//省略列名就是属性名

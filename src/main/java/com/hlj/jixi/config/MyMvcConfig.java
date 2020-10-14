@@ -57,7 +57,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
             public void addInterceptors(InterceptorRegistry registry) {
                 // 权限验证
 //                registry.addInterceptor(new LoginHandlerInteceptor())
-                        // 静态资源springboot处理不需要添加
+                // 静态资源springboot处理不需要添加
 //                        .addPathPatterns("/**")
 //                        .excludePathPatterns("/login.html", "/", "/user/login");
             }

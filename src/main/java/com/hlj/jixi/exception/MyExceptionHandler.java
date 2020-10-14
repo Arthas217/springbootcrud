@@ -10,20 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *  1.访问请求http://localhost:8080/emps/aa
- *  定制错误响应
- *   1）定制错误页面
- *        有模板引擎下，浏览器错误页面,优先选择地址 /error/状态码.html;次之选择4xx/5xx.html匹配这类型的所有错误
- *        模板引擎找不到，找静态资源文件夹/static（了解）
- *        没有模板引擎原生的  springboot错误提示页面 defaultErrorView
- *   2）定制错误json数据
- *
- *  2.ErrorMvcAutoConfiguration自动配置类
- *   1） ErrorPageCustomizer  如果出现错误就会生效，定制错误的响应规则就会来到/error
- *   2) BasicErrorController 处理/error请求 （分浏览器页面text/html和其他端的）
- *   3) ErrorViewResolver    处理响应页面 DefaultErrorViewResolver实现
- *   4) DefaultErrorAttributes  提供错误页面能获取的内容
- *
+ * 1.访问请求http://localhost:8080/emps/aa
+ * 定制错误响应
+ * 1）定制错误页面
+ * 有模板引擎下，浏览器错误页面,优先选择地址 /error/状态码.html;次之选择4xx/5xx.html匹配这类型的所有错误
+ * 模板引擎找不到，找静态资源文件夹/static（了解）
+ * 没有模板引擎原生的  springboot错误提示页面 defaultErrorView
+ * 2）定制错误json数据
+ * <p>
+ * 2.ErrorMvcAutoConfiguration自动配置类
+ * 1） ErrorPageCustomizer  如果出现错误就会生效，定制错误的响应规则就会来到/error
+ * 2) BasicErrorController 处理/error请求 （分浏览器页面text/html和其他端的）
+ * 3) ErrorViewResolver    处理响应页面 DefaultErrorViewResolver实现
+ * 4) DefaultErrorAttributes  提供错误页面能获取的内容
  */
 @ControllerAdvice
 // 异常信息不需要暴露给用户，自定义此类的返回信息
@@ -50,7 +49,7 @@ public class MyExceptionHandler {
         map.put("info", "failed");
         // exception参数是HelloException类中抛出的
         map.put("message", exception.getMessage());
-        request.setAttribute("content",map);
+        request.setAttribute("content", map);
         // 自适应BasicErrorController转发到/error页面
         return "forward:/error";
     }

@@ -11,11 +11,11 @@ import com.hlj.jixi.bean.Employee;
  */
 public interface EmployeeMapper {
 
-     Employee getEmpById(Integer id);
+    Employee getEmpById(Integer id);
 
-     void insertEmp(Employee employee);
+    void insertEmp(Employee employee);
 
-     void updateEmp(Employee employee);
+    void updateEmp(Employee employee);
 
-     void deleteEmp(Integer id);
+    void deleteEmp(Integer id);
 }

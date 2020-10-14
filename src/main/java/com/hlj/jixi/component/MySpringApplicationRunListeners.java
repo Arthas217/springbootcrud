@@ -21,7 +21,7 @@ public class MySpringApplicationRunListeners implements SpringApplicationRunList
 
     @Override
     public void environmentPrepared(ConfigurableEnvironment environment) {
-        System.out.println("SpringApplicationRunListener environment"+environment.getSystemProperties().get("os.name"));
+        System.out.println("SpringApplicationRunListener environment" + environment.getSystemProperties().get("os.name"));
         System.out.println("SpringApplicationRunListener environmentPrepared---------------");
     }
 

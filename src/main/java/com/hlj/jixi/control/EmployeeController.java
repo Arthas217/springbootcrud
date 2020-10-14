@@ -57,7 +57,7 @@ public class EmployeeController {
     @PostMapping("/emp")
     public String addEmployee(Employee employee) {
         //重定向到一个地址（员工列表页的请求地址）
-        System.out.println("添加员工信息："+employee);
+        System.out.println("添加员工信息：" + employee);
         employeeDao.save(employee);
         return "redirect:/emps";
     }
@@ -69,22 +69,22 @@ public class EmployeeController {
     @GetMapping("/emp/{id}")
     public String updatePage(@PathVariable("id") Integer id, Model model) {
         Employee employee = employeeDao.get(id);
-        model.addAttribute("emp", employee );
+        model.addAttribute("emp", employee);
         Collection<Department> departments = departmentDao.getDepartments();
         model.addAttribute("depts", departments);
         return "add";
     }
 
     @PutMapping("/emp")
-    public String updateEmployee(Employee employee){
-        System.out.println("修改员工信息"+employee);
+    public String updateEmployee(Employee employee) {
+        System.out.println("修改员工信息" + employee);
         employeeDao.save(employee);
         return "redirect:/emps";
     }
 
 
     @DeleteMapping("/emp/{id}")
-    public String deleteEmp(@PathVariable("id") Integer id){
+    public String deleteEmp(@PathVariable("id") Integer id) {
         employeeDao.delete(id);
         return "redirect:/emps";
     }

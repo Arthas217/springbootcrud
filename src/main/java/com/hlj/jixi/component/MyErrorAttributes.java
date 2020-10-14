@@ -10,7 +10,6 @@ import java.util.Map;
 /**
  * 定制json信息
  * 实现ErrorAttributes接口，否则返回错误信息内容来自DefaultErrorAttributes
- *
  */
 @Component
 public class MyErrorAttributes extends DefaultErrorAttributes {
