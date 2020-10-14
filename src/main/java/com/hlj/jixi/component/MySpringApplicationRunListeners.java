@@ -2,9 +2,7 @@ package com.hlj.jixi.component;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringApplicationRunListener;
-import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 /**

@@ -1,7 +1,7 @@
-# Initializers
+# 取自spring-boot-autoconfigure-2.3.3.RELEASE.jar
 org.springframework.context.ApplicationContextInitializer=\
 com.hlj.jixi.component.MyApplicationContextInitializer
 
-# Run Listeners
+# 取自spring-boot-2.3.3.RELEASE.jar
 org.springframework.boot.SpringApplicationRunListener=\
 com.hlj.jixi.component.MySpringApplicationRunListeners
