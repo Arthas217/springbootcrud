@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.3.RELEASE</version>
+        <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hlj.jixi</groupId>
@@ -145,11 +145,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <!--引入自定义的starter-->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
+            <groupId>org.example</groupId>
+            <artifactId>zlk-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
     <build>

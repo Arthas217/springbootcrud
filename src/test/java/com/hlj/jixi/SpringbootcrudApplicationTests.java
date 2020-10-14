@@ -34,8 +34,6 @@ class SpringbootcrudApplicationTests {
         // HikariProxyConnection@1963943166 wrapping com.mysql.cj.jdbc.ConnectionImpl@996a546
         System.out.println("------------------------" + connection);
         connection.close();
-
-
     }
 
 }

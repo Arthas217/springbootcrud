@@ -1,5 +1,6 @@
 package com.hlj.jixi.control;
 
+import com.beijing.HelloService;
 import com.hlj.jixi.entities.User;
 import com.hlj.jixi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,18 @@ public class UserControl {
     @GetMapping("/user/insert")
     public User insertUser(User user) {
         return userRepository.save(user);
+    }
+
+
+
+    @Autowired
+    HelloService helloService;
+    /**
+     * 测试自定义自动配置
+     * http://localhost:8080/customer
+     */
+    @GetMapping("/customer")
+    public String hello(){
+        return helloService.helloSay("zuocheng");
     }
 }
