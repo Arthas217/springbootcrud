@@ -21,21 +21,23 @@ import java.util.Map;
 @Controller
 public class HelloController {
 
+    // 测试时MyMvcConfig类中视图映射要注释掉，
     // 访问http://localhost:8080/ 会直接找静态资源类 classpath:/public/index.html
-    // 现在要求访问classpath:/templates/login.html
-    // 第一种如下
-//    @RequestMapping({"/","/login.html"})
-//    public String login(){
-//        return "login";
-//    }
+    // 如果要求访问classpath:/templates/login.html
+    //第一种如下
+    @RequestMapping({"/a","/login.html"})
+    public String login(){
+        return "login";
+    }
     // 第二种参见MyMvcConfig类
     @ResponseBody
     @RequestMapping("/hello")
     public String hello(@RequestParam("param") String param) {
         if (param.equals("abc")) {
-            // 优先走自定义MyExceptionHandler内容，如果没有就默认
+            // 优先走自定义MyExceptionHandler内容，如果想额外添加属性信息，通过MyErrorAttributes实现。如果没有就默认
             throw new HelloException();
         }
+        //http://localhost:8080/hello?param=abcd
         return "hello world";
     }
 
