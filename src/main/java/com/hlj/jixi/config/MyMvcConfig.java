@@ -9,10 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.LocaleResolver;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 
 
 /**
@@ -24,40 +21,44 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 //@EnableWebMvc
 @Configuration
-public class MyMvcConfig extends WebMvcConfigurerAdapter {
+public class MyMvcConfig
+        //extends WebMvcConfigurationSupport
+        {
 
     /**
      * 继承方式
      * WebMvcAutoConfiguration->WebMvcAutoConfigurationAdapter-> import EnableWebMvcConfiguration
-     * -> DelegatingWebMvcConfiguration  -> WebMvcConfigurer
+     * -> extends DelegatingWebMvcConfiguration  -> WebMvcConfigurationSupport(WebMvcConfigurer)
      */
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/atgg").setViewName("success");
-    }
-
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        // 浏览器发送/atgg请求  来到success
+//        registry.addViewController("/atgg").setViewName("success");
+//    }
 
     /**
-     * 组件方式
+     * 组件方式 :所有的WebMvcConfigurer组件都一起起作用
      */
     @Bean
-    public WebMvcConfigurerAdapter viewControllerAdapter() {
-        WebMvcConfigurerAdapter wmca = new WebMvcConfigurerAdapter() {
+    public  WebMvcConfigurer webMvcConfigurer() {
+        WebMvcConfigurer wmca = new  WebMvcConfigurer() {
             // 视图映射
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
+                // test 浏览器发送/atgg请求  来到success
+                registry.addViewController("/atgg").setViewName("success");
+
                 registry.addViewController("/").setViewName("login");
                 registry.addViewController("/login.html").setViewName("login");
                 // 用户登录防止表单重复提交，通过服务器视图映射
                 registry.addViewController("/main.html").setViewName("dashboard");
             }
 
-            // 注册拦截器
+            // 向容器中注册拦截器
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
-                // 权限验证
-//                registry.addInterceptor(new LoginHandlerInteceptor())
                 // 静态资源springboot处理不需要添加
+//                registry.addInterceptor(new LoginHandlerInteceptor()) // 自定义实现的权限验证
 //                        .addPathPatterns("/**")
 //                        .excludePathPatterns("/login.html", "/", "/user/login");
             }

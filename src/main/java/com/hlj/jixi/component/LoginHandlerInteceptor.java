@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class LoginHandlerInteceptor implements HandlerInterceptor {
     /**
-     * 预检查
+     * 预检查(登录之前）
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

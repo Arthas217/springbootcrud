@@ -71,6 +71,7 @@
             <optional>true</optional>
             <scope>true</scope>
         </dependency>
+
         <!--jquery-webjars-->
         <dependency>
             <groupId>org.webjars</groupId>

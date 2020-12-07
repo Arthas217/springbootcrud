@@ -14,6 +14,8 @@ import java.util.Locale;
 public class MyLocaleResolver implements LocaleResolver {
     /**
      * 国际化中英文切换判断
+     * 默认的就是根据请求头带来的区域信息获取Locale进行国际化
+     * http://localhost:8080/login.html?l=en_US
      */
     @Override
     public Locale resolveLocale(HttpServletRequest request) {

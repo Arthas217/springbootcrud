@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 错误处理机制
  * 1.访问请求http://localhost:8080/emps/aa
  * 定制错误响应
  * 1）定制错误页面

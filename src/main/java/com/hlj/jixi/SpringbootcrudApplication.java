@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //多个mapper类时，不需要在每个类上添加@mapper，可以使用@MapperScan注解
 @MapperScan(value = "com.hlj.jixi.mapper")
-@SpringBootApplication
+@SpringBootApplication //Spring Boot的主配置类
 public class SpringbootcrudApplication {
 
     // 应用访问SpringData 通过统一接口repository（crud、排序、分页）、提供数据访问的xxxTemplate、统一对象映射Mapper来简化和统一数据访问
@@ -26,7 +26,7 @@ public class SpringbootcrudApplication {
     // 准备环境 prepareEnvironment，
     // 创建ioc容器 createApplicationContext （web还会普通）
     // 准备上下问 prepareContext( applyInitializers，回调listeners.contextPrepared(context)，回到listeners.contextLoaded(context))
-    // 加载ioc容器 refreshContext（容器刷新--扫描、创建、加载组件的地方 ）
+    // 加载ioc容器 refreshContext（容器刷新--扫描、创建、加载组件的地方  sring加载bean过程）
     // 回调listeners.started(context);
     // callRunners(从ioc容器中回调 ApplicationRunner,CommandLineRunner）
     // 回调listeners.running(context);

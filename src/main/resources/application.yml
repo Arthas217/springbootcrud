@@ -3,8 +3,8 @@ spring:
     username: root
     password: 123456
 #    url: jdbc:mysql://192.168.0.106:3306/springjdbc
-#    url: jdbc:mysql://192.168.0.106:3306/mybatis
-    url: jdbc:mysql://192.168.0.106:3306/jpa
+    url: jdbc:mysql://192.168.0.106:3306/mybatis
+#    url: jdbc:mysql://192.168.0.106:3306/jpa
     #老版本  com.mysql.jdbc.Driver
     driver-class-name:  com.mysql.cj.jdbc.Driver
 
@@ -47,12 +47,12 @@ spring:
 #    allow-bean-definition-overriding: true
 
   #配置jpa的hibernate时，druid不需要使用
-  jpa:
-    hibernate:
-      #使用hibernate 当表无或者更新时自动生成实体类User中name属性tb_user
-      # 启动程序会自动Hibernate: create table tb_user (id integer not null auto_increment, email varchar(255), last_name varchar(50), primary key (id)) engine=InnoDB
-      ddl-auto: update
-    show-sql: true
+#  jpa:
+#    hibernate:
+#      #使用hibernate 当表无或者更新时自动生成实体类User中name属性tb_user
+#      # 启动程序会自动Hibernate: create table tb_user (id integer not null auto_increment, email varchar(255), last_name varchar(50), primary key (id)) engine=InnoDB
+#      ddl-auto: update
+#    show-sql: true
 
 
 
