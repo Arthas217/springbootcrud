@@ -16,7 +16,7 @@ import java.util.Map;
 
 /**
  * 配置yml文件中druid数据源设置参数生效问题
- * http://localhost:8080/druid/login.html
+ * 访问 http://localhost:8080/druid/login.html
  *
  * @Date 2020/10/13
  */
@@ -30,7 +30,8 @@ public class DruidConfig {
         return druidDataSource;
     }
 
-    // 配置druid监控(配置后台管理servert、配置监控filter）
+    // druid监控
+    // 配置后台管理servlet
     @Bean
     public ServletRegistrationBean statViewServlet() {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
@@ -44,7 +45,7 @@ public class DruidConfig {
         return servletRegistrationBean;
     }
 
-    //配置过滤器
+    //配置监控filter
     @Bean
     public FilterRegistrationBean webStatFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
@@ -55,4 +56,5 @@ public class DruidConfig {
         filterRegistrationBean.setUrlPatterns(Arrays.asList("/*"));
         return filterRegistrationBean;
     }
+
 }

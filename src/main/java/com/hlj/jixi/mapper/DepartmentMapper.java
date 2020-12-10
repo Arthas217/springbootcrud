@@ -5,11 +5,12 @@ import org.apache.ibatis.annotations.*;
 
 /**
  * 全注解版本：定义一个操作DB的mapper
- * springboot由MybatisAutoConfiguration自动配置实现
+ * 由MybatisAutoConfiguration自动配置实现
  *
  * @Author zc217
  * @Date 2020/10/14
  */
+@Mapper
 public interface DepartmentMapper {
 
     @Select("select * from department where id=#{id}")

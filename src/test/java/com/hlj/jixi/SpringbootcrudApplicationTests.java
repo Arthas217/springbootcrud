@@ -8,6 +8,10 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * 测试springboot数据源
+ * 注意测试时需要把DruidConfig类的注入去掉
+ */
 @SpringBootTest
 class SpringbootcrudApplicationTests {
 
@@ -16,7 +20,7 @@ class SpringbootcrudApplicationTests {
 
 
     /**
-     *  自动配置原理jdbc就在org.springframework.boot.autoconfigure.jdbc包下
+     *  jdbc自动配置原理就在org.springframework.boot.autoconfigure.jdbc包下
      *  1. DataSourceConfiguration：根据配置创建数据源 （tomcat jdbc 、hikari、dbcp2、及自定义Generic--反射)
      *  2. DataSourceInitializer： 执行脚本sql语句
      *          方法createSchema()  schema、initialization-mode

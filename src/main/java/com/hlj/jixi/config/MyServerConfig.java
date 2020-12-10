@@ -17,8 +17,8 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Arrays;
 
 /**
- * 服务相关的配置
- *
+ * 服务容器修改配置及servlet三大组件
+ * 嵌入式servlet容器的自动配置 EmbeddedWebServerFactoryCustomizerAutoConfiguration
  * @Author zc217
  * @Date 2020/10/12
  */
@@ -26,12 +26,13 @@ import java.util.Arrays;
 public class MyServerConfig {
 
 
-    //配置嵌入式servlet容器（父接口WebServerFactory)
+    //配置嵌入式servlet容器（父接口WebServerFactory)修改tomcat容器端口(优先加载此自定义配置类）
 //    @Bean
 //    public TomcatServletWebServerFactory webServerFactoryCustomizer() {
 //        return new TomcatServletWebServerFactory(8081);
 //        return new JettyServletWebServerFactory(8081);
 //    }
+
 
     // servlet容器注册三大组件(DispatcherServletAutoConfiguration帮我们完成)
     @Bean
@@ -55,6 +56,4 @@ public class MyServerConfig {
         return new ServletListenerRegistrationBean(new MyListener());
     }
 
-
-    // 嵌入式servlet容器的自动配置 EmbeddedWebServerFactoryCustomizerAutoConfiguration
 }

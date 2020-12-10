@@ -77,24 +77,4 @@ public class HelloController {
         response.getWriter().write(JSON.toJSON(user).toString());
     }
 
-
-    @Autowired
-    JdbcTemplate jdbcTemplate;
-
-    /**
-     * jdbc + druid
-     * http://localhost:8080/query
-     * <p>
-     * {
-     * "id": 1,
-     * "departmentName": "AA"
-     * }
-     */
-    @GetMapping("/query")
-    @ResponseBody
-    public Map<String, Object> testMap() {
-        List<Map<String, Object>> list = jdbcTemplate.queryForList("select * from department");
-        return list.get(0);
-    }
-
 }

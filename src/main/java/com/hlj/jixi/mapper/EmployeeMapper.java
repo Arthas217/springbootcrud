@@ -1,6 +1,7 @@
 package com.hlj.jixi.mapper;
 
 import com.hlj.jixi.bean.Employee;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 配置版本mapper
@@ -9,6 +10,7 @@ import com.hlj.jixi.bean.Employee;
  * @Author zc217
  * @Date 2020/10/14
  */
+@Mapper
 public interface EmployeeMapper {
 
     Employee getEmpById(Integer id);

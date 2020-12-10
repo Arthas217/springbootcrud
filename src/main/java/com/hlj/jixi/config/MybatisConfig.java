@@ -5,9 +5,8 @@ import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
 import org.springframework.context.annotation.Bean;
 
 /**
- * 当数据库字段命名为_时与bean字段驼峰不对应时，开启
+ * 自定义mybatis配置规则--当数据库字段命名为_时与bean字段驼峰不对应时
  * 参考 MybatisAutoConfiguration自动配置里的sqlSessionFactory这个bean
- * 自定义mybatis配置规则
  *
  * @Author zc217
  * @Date 2020/10/14
