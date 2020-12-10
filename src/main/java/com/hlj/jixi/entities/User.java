@@ -13,8 +13,9 @@ import javax.persistence.*;
  * @Author zc217
  * @Date 2020/10/14
  */
-@Entity //和数据表映射的类（不简单的是一个实体类了）
-@Table(name = "tb_user") //默认不写，name= 表名
+@Entity //告诉JPA这是一个实体类（和数据表映射的类）
+//@Table //来指定和哪个数据表对应;如果省略默认表名就是user；
+@Table(name = "tb_user")
 public class User {
     @Id //主键
     @GeneratedValue(strategy = GenerationType.IDENTITY) //自增

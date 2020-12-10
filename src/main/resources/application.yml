@@ -5,7 +5,7 @@ spring:
     #url后面是对应的数据库名
 #    url: jdbc:mysql://192.168.0.106:3306/springjdbc
     url: jdbc:mysql://192.168.0.106:3306/mybatis
-#    url: jdbc:mysql://192.168.0.106:3306/jpa
+
     #老版本  com.mysql.jdbc.Driver
     driver-class-name:  com.mysql.cj.jdbc.Driver
 
@@ -19,7 +19,7 @@ spring:
 
     # 自定义配置数据源
 #    type: org.apache.tomcat.jdbc.pool.DataSource
-    # 切换自定义数据源druid（配置参数可以在监控页面中-数据源--查看）
+    #切换自定义数据源druid（配置参数可以在监控页面中-数据源--查看）
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
     minIdle: 5
@@ -33,7 +33,7 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
 
-    filters: stat,wall,log4j  #'wall'用于防火墙
+    filters: stat,wall,log4j  #stat统计，'wall'用于防火墙
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
@@ -43,19 +43,23 @@ spring:
     # https://www.coder.work/article/56327
 
 
+#    url: jdbc:mysql://192.168.0.106:3306/jpa
+  #基本的配置JpaProperties 配置jpa的hibernate
+#  jpa:
+#    hibernate:
+#      # 使用hibernate 当表无或者更新时自动生成实体类User中name属性值
+#      # 启动程序会自动输出--Hibernate: create table tb_user (id integer not null auto_increment, email varchar(255), last_name varchar(50), primary key (id)) engine=InnoDB
+#      ddl-auto: update
+#    #Hibernate: select user0_.id as id1_0_0_, user0_.email as email2_0_0_, user0_.last_name as last_nam3_0_0_ from tb_user user0_ where user0_.id=?
+#    #Hibernate: insert into tb_user (email, last_name) values (?, ?)
+#    show-sql: true
+
+
 # 让mybatis知道配置文件位置（全局配置文件、sql映射mapper文件）
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/EmployeeMapper.xml
 #  mapper-locations: classpath:mybatis/mapper/*.xml
 
-
-  #配置jpa的hibernate时，druid不需要使用
-#  jpa:
-#    hibernate:
-#      #使用hibernate 当表无或者更新时自动生成实体类User中name属性tb_user
-#      # 启动程序会自动Hibernate: create table tb_user (id integer not null auto_increment, email varchar(255), last_name varchar(50), primary key (id)) engine=InnoDB
-#      ddl-auto: update
-#    show-sql: true
 
 

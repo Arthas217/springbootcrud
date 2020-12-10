@@ -1,6 +1,5 @@
 package com.hlj.jixi.control;
 
-import com.beijing.HelloService;
 import com.hlj.jixi.entities.User;
 import com.hlj.jixi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 /**
+ * jpa-userRepository
+ *
  * @Author zc217
  * @Date 2020/10/14
  */
@@ -36,16 +37,4 @@ public class UserControl {
         return userRepository.save(user);
     }
 
-
-
-    @Autowired
-    HelloService helloService;
-    /**
-     * 测试自定义自动配置
-     * http://localhost:8080/customer
-     */
-    @GetMapping("/customer")
-    public String hello(){
-        return helloService.helloSay("zuocheng");
-    }
 }

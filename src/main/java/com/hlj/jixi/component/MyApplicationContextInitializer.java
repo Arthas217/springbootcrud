@@ -17,7 +17,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class MyApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
-        System.out.println("---------------ApplicationContextInitializer-------------Initializer");
-        System.out.println("ConfigurableApplicationContext ioc容器---------------" + applicationContext);
+        System.out.println("ApplicationContextInitializer-------------Initializer");
+        System.out.println("ConfigurableApplicationContext ioc容器-------------------" + applicationContext);
     }
 }
